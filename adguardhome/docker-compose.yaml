@@ -1,0 +1,8 @@
+services:
+  adguardhome:
+    image: registry.gitlab.com/feng2208/a/adguard/adguardhome:v0.107.64
+    restart: 'unless-stopped'
+    network_mode: 'host'
+    volumes:
+      - ./work:/opt/adguardhome/work
+      - ./conf:/opt/adguardhome/conf
