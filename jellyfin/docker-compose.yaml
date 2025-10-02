@@ -13,6 +13,8 @@ services:
     restart: 'unless-stopped'
     # intel gpu hardware acceleration
     group_add:
+      # /dev/dri/renderD128 group's id
+      # getent group render | cut -d: -f3
       - '110'
     devices:
       - /dev/dri/renderD128:/dev/dri/renderD128
