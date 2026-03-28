@@ -4,7 +4,7 @@ volumes:
 
 services:
   db:
-    image: ghcr.io/feng2208/mariadb:10.11.11
+    image: ghcr.io/feng2208/mariadb:11.8.6
     restart: always
     command: --transaction-isolation=READ-COMMITTED --log-bin=binlog --binlog-format=ROW
     volumes:
@@ -17,7 +17,7 @@ services:
       #- MARIADB_AUTO_UPGRADE=1
 
   app:
-    image: ghcr.io/feng2208/nextcloud:31.0.2
+    image: ghcr.io/feng2208/nextcloud:33.0.1
     restart: always
     ports:
       - 8080:80
