@@ -1,6 +1,6 @@
 services:
   adguardhome:
-    image: registry.gitlab.com/feng2208/a/adguard/adguardhome:v0.107.64
+    image: ghcr.io/feng2208/adguardhome:v0.107.73
     restart: 'unless-stopped'
     network_mode: 'host'
     volumes:
