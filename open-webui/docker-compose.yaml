@@ -1,6 +1,6 @@
 services:
-  openwebui:
-    image: ghcr.io/open-webui/open-webui:v0.12.0-slim
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:v0.13.4-slim
     ports:
       - "3000:8080"
     volumes:
@@ -12,5 +12,19 @@ services:
       - DEFAULT_LOCALE=zh-CN
     restart: unless-stopped
 
+  open-terminal:
+    image: ghcr.io/open-webui/open-terminal:0.17.20-slim
+    volumes:
+      - open-terminal:/home/user
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    working_dir: /home/user/project
+    environment:
+      - OPEN_TERMINAL_API_KEY=28018bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+      - DEFAULT_LOCALE=zh-CN
+    restart: unless-stopped
+
+
 volumes:
   open-webui:
+  open-terminal:
